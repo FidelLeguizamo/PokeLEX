@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>PokeLex</title>
+  <link rel="icon" href="src/assets/masterball.png"/>
+  <link href="src/style.css" rel="stylesheet"/>
+  <script type="module" src="/src/main.js" defer></script>
+
+</head>
+<body>
+
+<aside class="side-panel" aria-label="Panel de equipo y favoritos">
+  <div class="panel-tabs">
+    <button class="panel-tab active" id="tabTeam" type="button">Crear tu equipo</button>
+    <button class="panel-tab" id="tabFavorites" type="button">Favoritos</button>
+  </div>
+
+  <section class="panel-section active" id="teamPanel">
+    <div class="panel-head">
+      <h2>Tu equipo</h2>
+      <span id="teamCount">0/6</span>
+    </div>
+    <div class="mini-list" id="teamList"></div>
+  </section>
+
+  <section class="panel-section" id="favoritesPanel">
+    <div class="panel-head">
+      <h2>Favoritos</h2>
+      <span id="favoriteCount">0</span>
+    </div>
+    <div class="mini-list" id="favoriteList"></div>
+  </section>
+</aside>
+
+<header>
+  <div class="logo">
+    <img class="logo-ball" src="src/assets/masterball.png" alt="Master Ball"/>
+    <h1>Poke<span>LEX</span></h1>
+  </div>
+
+  <div class="search-wrap">
+    <div class="search-row">
+      <div class="field-wrap">
+        <input type="text" id="inputName" placeholder="Nombre del Pokémon"
+            autocomplete="off" autocapitalize="none" spellcheck="false"/>
+      </div>
+      <button class="btn-search" id="btnSearch">BUSCAR</button>
+      <button class="btn-clear"  id="btnClear"  title="Ver todos">↻</button>
+    </div>
+    <div class="error-msg" id="errorMsg"></div>
+  </div>
+</header>
+
+
+<div class="stats-bar" id="statsBar"></div>
+
+
+<div class="loader" id="loader">
+  <div class="pokeball"></div>
+  <span class="loader-text">Buscando en la PokeLex…</span>
+</div>
+
+<div class="state-box" id="stateEmpty">
+  <h3>Sin resultados</h3>
+  <p id="emptyMsg"></p>
+</div>
+
+<div class="state-box" id="stateError">
+  <h3>Error de conexión</h3>
+  <p id="errorDetail"></p>
+  <button class="btn-retry" id="btnRetry">Reintentar</button>
+</div>
+
+
+<div class="grid" id="grid"></div>
+
+<nav class="pagination" id="pagination" aria-label="Paginación de Pokémon"></nav>
+
+<footer>
+  Datos provistos por <a href="https://pokeapi.co" target="_blank" rel="noopener">PokeAPI</a>
+</footer>
+</body>
+</html>
