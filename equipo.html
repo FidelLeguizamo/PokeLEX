@@ -3,18 +3,17 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>PokeLex</title>
+  <title>PokeLex - Equipo</title>
   <link rel="icon" href="src/assets/masterball.png"/>
   <link href="src/style.css" rel="stylesheet"/>
   <script type="module" src="src/main.js" defer></script>
-
 </head>
-<body data-pagina="inicio">
+<body data-pagina="equipo">
 
-<aside class="side-panel" aria-label="Panel de equipo y favoritos">
+<aside class="side-panel" aria-label="Navegacion">
   <div class="panel-tabs">
-    <a class="panel-tab active" href="index.html">Pokedex</a>
-    <a class="panel-tab" href="equipo.html">Crear tu equipo</a>
+    <a class="panel-tab" href="index.html">Pokedex</a>
+    <a class="panel-tab active" href="equipo.html">Crear tu equipo</a>
     <a class="panel-tab" href="favoritos.html">Favoritos</a>
   </div>
 
@@ -25,14 +24,6 @@
     </div>
     <div class="mini-list" id="teamList"></div>
   </section>
-
-  <section class="panel-section active">
-    <div class="panel-head">
-      <h2>Favoritos</h2>
-      <span id="favoriteCount">0</span>
-    </div>
-    <div class="mini-list" id="favoriteList"></div>
-  </section>
 </aside>
 
 <header>
@@ -40,44 +31,27 @@
     <img class="logo-ball" src="src/assets/masterball.png" alt="Master Ball"/>
     <h1>Poke<span>LEX</span></h1>
   </div>
-
-  <div class="search-wrap">
-    <div class="search-row">
-      <div class="field-wrap">
-        <input type="text" id="inputName" placeholder="Nombre del Pokémon"
-            autocomplete="off" autocapitalize="none" spellcheck="false"/>
-      </div>
-      <button class="btn-search" id="btnSearch">BUSCAR</button>
-      <button class="btn-clear"  id="btnClear"  title="Ver todos">↻</button>
-    </div>
-    <div class="error-msg" id="errorMsg"></div>
-  </div>
 </header>
-
 
 <div class="stats-bar" id="statsBar"></div>
 
-
 <div class="loader" id="loader">
   <div class="pokeball"></div>
-  <span class="loader-text">Buscando en la PokeLex…</span>
+  <span class="loader-text">Cargando tu equipo...</span>
 </div>
 
 <div class="state-box" id="stateEmpty">
-  <h3>Sin resultados</h3>
+  <h3>Equipo vacio</h3>
   <p id="emptyMsg"></p>
 </div>
 
 <div class="state-box" id="stateError">
-  <h3>Error de conexión</h3>
+  <h3>Error de conexion</h3>
   <p id="errorDetail"></p>
   <button class="btn-retry" id="btnRetry">Reintentar</button>
 </div>
 
-
 <div class="grid" id="grid"></div>
-
-<nav class="pagination" id="pagination" aria-label="Paginación de Pokémon"></nav>
 
 <footer>
   Datos provistos por <a href="https://pokeapi.co" target="_blank" rel="noopener">PokeAPI</a>
